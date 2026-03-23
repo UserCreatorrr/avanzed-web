@@ -1,30 +1,30 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Colors */
-  --color-terracota: #C1694F;
-  --color-terracota-dark: #9E4F39;
-  --color-terracota-light: #D4876B;
+  /* Colors - Azul Mineral Premium */
+  --color-terracota: #315A70;
+  --color-terracota-dark: #264757;
+  --color-terracota-light: #B08A72;
   
-  --color-bright-red: #BF3025;
-  --color-bright-red-dark: #9B261D;
+  --color-bright-red: #B08A72;
+  --color-bright-red-dark: #9A7060;
 
-  --color-beige-rose: #E8C9B8;
-  --color-beige-rose-light: #F2DDD1;
-  --color-beige-rose-dark: #D1A98C;
+  --color-beige-rose: #D4C4B8;
+  --color-beige-rose-light: #EDE5DE;
+  --color-beige-rose-dark: #C0B0A4;
 
-  --color-perola: #F0EBE3;
-  --color-perola-light: #FAF8F5;
-  --color-perola-dark: #DDD4C8;
+  --color-perola: #EEF0F3;
+  --color-perola-light: #FBFAF7;
+  --color-perola-dark: #E3E5E8;
 
-  --color-dark: #1A1A1A;
-  --color-dark-medium: #2C2C2C;
-  --color-dark-soft: #3D3D3D;
+  --color-dark: #111E27;
+  --color-dark-medium: #111827;
+  --color-dark-soft: #1D2E3E;
 
-  --color-gray: #6E6E6E;
-  --color-gray-dark: #4A4A4A;
-  --color-gray-light: #A8A8A8;
-  --color-gray-lightest: #D8D0C8;
+  --color-gray: #6B7280;
+  --color-gray-dark: #4B5563;
+  --color-gray-light: #9CA3AF;
+  --color-gray-lightest: #D1D5DB;
 
   /* Typography */
   --font-sans: var(--font-inter);
@@ -34,12 +34,10 @@
 
 :root {
   --background: var(--color-perola-light);
-  --foreground: var(--color-dark);
+  --foreground: var(--color-dark-medium);
 }
 
 @media (prefers-color-scheme: dark) {
-  /* For this brand, dark mode is specific per component as per the brandbook.
-     The overall theme is kept consistent. */
   :root {
     --background: var(--color-dark);
     --foreground: #ffffff;
