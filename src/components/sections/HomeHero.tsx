@@ -14,11 +14,8 @@ export default function HomeHero() {
         offset: ["start start", "end end"]
     });
 
-    // Progress 0 to 0.5: Content and Searchbar fades in and moves up
     const contentOpacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
     const contentY = useTransform(scrollYProgress, [0, 0.5], [100, 0]);
-
-    // Background overly becomes darker
     const overlayOpacity = useTransform(scrollYProgress, [0, 0.5], [0.1, 0.8]);
 
     return (
@@ -38,7 +35,6 @@ export default function HomeHero() {
                         style={{ opacity: overlayOpacity }}
                     />
                 </div>
-
 
                 {/* Content Revealed on Scroll */}
                 <motion.div
@@ -69,10 +65,10 @@ export default function HomeHero() {
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
-                        <Link href="/contacto" className="bg-terracota text-white px-8 py-4 text-overline transition-colors hover:bg-terracota-dark">
+                        <Link href="/contacto" className="btn-fill bg-terracota text-white px-8 py-4 text-overline inline-block">
                             Solicitar propuesta
                         </Link>
-                        <Link href="/metodologia" className="text-white border-b border-white/30 pb-1 text-[13px] font-semibold tracking-wider uppercase font-heading hover:border-white transition-colors">
+                        <Link href="/metodologia" className="nav-link-animated text-white text-[13px] font-semibold tracking-wider uppercase font-heading pb-1">
                             Conocer metodología
                         </Link>
                     </div>
