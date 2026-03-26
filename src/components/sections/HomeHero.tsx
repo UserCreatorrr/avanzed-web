@@ -41,7 +41,7 @@ export default function HomeHero() {
                     className="container relative z-30 mx-auto px-8 md:pl-24 md:pr-12 pointer-events-auto"
                     style={{ opacity: contentOpacity, y: contentY }}
                 >
-                    <span className="text-overline text-terracota-light mb-6 block drop-shadow-md">Consultoría de RRHH · Sector Odontológico</span>
+                    <span className="text-overline text-white/70 mb-6 block drop-shadow-md">Consultoría de RRHH · Sector Odontológico</span>
                     <h1 className="text-h1 mb-6 max-w-4xl text-white drop-shadow-lg">
                         Selección de personal odontología para clínicas que priorizan la excelencia
                     </h1>
