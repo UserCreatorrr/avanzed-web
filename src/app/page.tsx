@@ -30,8 +30,8 @@ export default function HomePage() {
               <span className="text-overline text-terracota mb-4 block">Áreas de especialización</span>
               <h2 className="text-h2 text-dark">Especialización real en las áreas donde la selección no admite improvisación</h2>
             </div>
-            <Link href="/especializaciones" className="text-terracota text-[12px] font-bold tracking-widest uppercase border border-terracota px-6 py-3 hover:bg-terracota hover:text-white transition-colors shrink-0">
-              Ver todas
+            <Link href="/especializaciones" className="btn2 text-terracota text-[12px] px-6 py-3 shrink-0">
+              <span className="btn2-text">Ver todas</span>
             </Link>
           </div>
 
@@ -43,10 +43,10 @@ export default function HomePage() {
               { title: 'Cirugía bucal u oral', href: '/especializaciones/cirugia-bucal-oral', desc: 'Evaluación quirúrgica y fiabilidad asistencial.' },
               { title: 'Prostodoncia', href: '/especializaciones/prostodoncia', desc: 'Incorporación de alto nivel de especialización.' }
             ].map((spec, i) => (
-              <Link key={i} href={spec.href} className="bg-perola-light p-8 border-l-[3px] border-terracota hover:bg-terracota hover:border-dark transition-all duration-300 group">
-                <span className="text-overline text-terracota mb-4 block group-hover:text-perola transition-colors">0{i + 1}</span>
-                <h3 className="text-h3 text-dark mb-3 group-hover:text-white transition-colors">{spec.title}</h3>
-                <p className="text-body-small text-gray group-hover:text-white/80 transition-colors">{spec.desc}</p>
+              <Link key={i} href={spec.href} className="card-expand bg-perola-light p-8 border-l-[3px] border-terracota">
+                <span className="card-expand-text text-overline text-terracota mb-4 block">0{i + 1}</span>
+                <h3 className="card-expand-title text-h3 text-dark mb-3">{spec.title}</h3>
+                <p className="card-expand-text text-body-small text-gray">{spec.desc}</p>
               </Link>
             ))}
           </div>
@@ -63,7 +63,7 @@ export default function HomePage() {
               <p className="text-body text-gray-dark mb-8">
                 El equipo correcto construye la clínica de excelencia. Potenciamos procesos seguros y resultados fiables mediante un método contrastado.
               </p>
-              <Link href="/metodologia" className="bg-terracota text-white px-8 py-4 text-overline transition-colors hover:bg-terracota-dark inline-block">
+              <Link href="/metodologia" className="btn-fill bg-terracota text-white px-8 py-4 text-overline inline-block">
                 Conocer la metodología
               </Link>
             </div>
@@ -75,9 +75,9 @@ export default function HomePage() {
                 { title: '3. Integración', desc: 'Onboarding y ajuste clínico.' },
                 { title: '4. Seguimiento', desc: 'Validación de éxito a largo plazo.' }
               ].map((step, i) => (
-                <div key={i} className="bg-white p-6 border border-perola-dark shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-terracota-light transition-all duration-300 cursor-default">
-                  <h4 className="font-heading font-bold text-dark text-lg mb-2">{step.title}</h4>
-                  <p className="text-body-small text-gray">{step.desc}</p>
+                <div key={i} className="card-expand card-lift bg-white p-6 border border-perola-dark shadow-sm cursor-default">
+                  <h4 className="card-expand-title font-heading font-bold text-dark text-lg mb-2">{step.title}</h4>
+                  <p className="card-expand-text text-body-small text-gray">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -87,7 +87,6 @@ export default function HomePage() {
 
       {/* 5. Por qué Avanzed (Diferencial) */}
       <section className="py-24 bg-dark text-white relative overflow-hidden">
-        {/* Decorator */}
         <div className="absolute bottom-0 right-0 w-72 h-72 bg-bright-red opacity-10 blur-3xl rounded-full"></div>
 
         <div className="container mx-auto px-6 relative z-10">
@@ -122,8 +121,6 @@ export default function HomePage() {
         </div>
       </section>
 
-
-
       {/* 7. FAQs */}
       <section className="py-24 bg-perola">
         <div className="container mx-auto px-6 max-w-4xl">
@@ -134,7 +131,7 @@ export default function HomePage() {
               { q: '¿Qué perfiles puede ayudar a incorporar Avanzed?', a: 'Cubrimos odontólogos generales y especialistas (endodoncia, cirugía oral, prostodoncia, etc.), asegurando un encaje técnico y cultural.' },
               { q: '¿Cómo se inicia un proceso con Avanzed?', a: 'Comenzamos con una auditoría de necesidades para definir el perfil ideal con exactitud, antes de iniciar la búsqueda y validación del talento.' }
             ].map((faq, i) => (
-              <details key={i} className="bg-white p-6 border border-perola-dark group cursor-pointer hover:border-terracota transition-colors duration-300 shadow-sm hover:shadow-md">
+              <details key={i} className="card-lift bg-white p-6 border border-perola-dark group cursor-pointer shadow-sm">
                 <summary className="text-h3 text-dark font-bold list-none flex justify-between items-center group-hover:text-terracota transition-colors">
                   {faq.q}
                   <span className="text-terracota text-2xl group-open:rotate-45 transition-transform duration-300">+</span>
@@ -157,7 +154,7 @@ export default function HomePage() {
           <p className="text-body text-white/70 mb-10">
             Especialización real en talento odontológico para decisiones de incorporación más seguras.
           </p>
-          <Link href="/contacto" className="bg-terracota text-white px-10 py-5 text-[14px] font-bold tracking-widest uppercase font-heading hover:bg-terracota-dark transition-colors inline-block">
+          <Link href="/contacto" className="btn-fill bg-terracota text-white px-10 py-5 text-[14px] font-bold tracking-widest uppercase font-heading inline-block">
             Agendar una consulta
           </Link>
         </div>
