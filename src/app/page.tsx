@@ -87,14 +87,14 @@ export default function HomePage() {
 
       {/* 5. Por qué Avanzed (Diferencial) */}
       <section className="py-24 bg-dark text-white relative overflow-hidden">
-        <div className="absolute bottom-0 right-0 w-72 h-72 bg-bright-red opacity-10 blur-3xl rounded-full"></div>
+        <div className="absolute bottom-0 right-0 w-72 h-72 bg-terracota opacity-10 blur-3xl rounded-full"></div>
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-5">
               <span className="text-overline text-terracota mb-4 block">El Diferencial</span>
               <h2 className="text-h2 text-white mb-8">Por qué una selección especializada marca la diferencia</h2>
-              <div className="p-8 bg-white/5 border-l-2 border-bright-red mb-8">
+              <div className="p-8 bg-white/5 border-l-2 border-terracota mb-8">
                 <p className="text-quote text-white mb-2">
                   "No aceleramos procesos sin criterio. Los potenciamos para que funcionen mejor."
                 </p>
@@ -147,7 +147,7 @@ export default function HomePage() {
 
       {/* 8. CTA Final */}
       <section className="bg-dark text-white py-24 relative overflow-hidden">
-        <div className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-terracota to-bright-red"></div>
+        <div className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-terracota to-terracota-dark"></div>
         <div className="container mx-auto px-6 text-center max-w-3xl">
           <span className="text-overline text-terracota mb-6 block">Hablemos</span>
           <h2 className="text-h1 text-white mb-8">Construyamos el equipo correcto para tu clínica</h2>
