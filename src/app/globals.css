@@ -228,22 +228,26 @@ body {
   z-index: 0;
   overflow: hidden;
 }
+.card-expand > * {
+  position: relative;
+  z-index: 1;
+}
 .card-expand::before {
   content: "";
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   top: -16px;
   right: -16px;
   background: var(--color-terracota);
   height: 32px;
   width: 32px;
   border-radius: 50%;
-  transform: scale(1);
+  transform: scale(0);
   transform-origin: 50% 50%;
-  transition: transform 0.35s ease-out;
+  transition: transform 0.45s ease-out;
 }
 .card-expand:hover::before {
-  transform: scale(22);
+  transform: scale(50);
 }
 .card-expand:hover .card-expand-text {
   transition: all 0.3s ease-out;
