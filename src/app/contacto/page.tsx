@@ -1,10 +1,27 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import React from 'react';
 
 export const metadata: Metadata = {
     title: 'Contacto | Avanzed - Consultoría Odontológica',
     description: 'Ponte en contacto con Avanzed para solicitar especialistas odontológicos o delegar tu proceso de selección.',
 };
+
+function WaveLabel({ text }: { text: string }) {
+    return (
+        <label className="label">
+            {text.split('').map((char, i) => (
+                <span
+                    key={i}
+                    className="label-char"
+                    style={{ '--index': i } as React.CSSProperties}
+                >
+                    {char === ' ' ? '\u00A0' : char}
+                </span>
+            ))}
+        </label>
+    );
+}
 
 export default function ContactoPage() {
     return (
@@ -35,26 +52,29 @@ export default function ContactoPage() {
                             {/* Normal Form (Mobile & Tablet) */}
                             <div className="bg-white p-10 border border-perola-dark shadow-sm lg:hidden">
                                 <h2 className="text-h3 text-dark mb-8">Solicita una auditoría de perfil</h2>
-                                <form className="space-y-6">
+                                <form className="space-y-4">
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                        <div className="space-y-2">
-                                            <label className="text-[12px] font-bold tracking-widest uppercase font-heading text-gray-dark">Nombre</label>
-                                            <input type="text" className="w-full border-b border-perola-dark p-2 focus:outline-none focus:border-terracota transition-colors" placeholder="Tu nombre" />
+                                        <div className="wave-group">
+                                            <input required type="text" className="input" />
+                                            <span className="bar"></span>
+                                            <WaveLabel text="Nombre" />
                                         </div>
-                                        <div className="space-y-2">
-                                            <label className="text-[12px] font-bold tracking-widest uppercase font-heading text-gray-dark">Clínica</label>
-                                            <input type="text" className="w-full border-b border-perola-dark p-2 focus:outline-none focus:border-terracota transition-colors" placeholder="Nombre completo" />
+                                        <div className="wave-group">
+                                            <input required type="text" className="input" />
+                                            <span className="bar"></span>
+                                            <WaveLabel text="Clínica" />
                                         </div>
                                     </div>
-                                    <div className="space-y-2">
-                                        <label className="text-[12px] font-bold tracking-widest uppercase font-heading text-gray-dark">Email corporativo</label>
-                                        <input type="email" className="w-full border-b border-perola-dark p-2 focus:outline-none focus:border-terracota transition-colors" placeholder="direccion@tuclinica.com" />
+                                    <div className="wave-group">
+                                        <input required type="email" className="input" />
+                                        <span className="bar"></span>
+                                        <WaveLabel text="Email corporativo" />
                                     </div>
-                                    <div className="space-y-2">
-                                        <label className="text-[12px] font-bold tracking-widest uppercase font-heading text-gray-dark">Perfil a incorporar o desafío principal</label>
-                                        <textarea rows={4} className="w-full border border-perola-dark p-3 focus:outline-none focus:border-terracota transition-colors mt-2" placeholder="Ej: Buscamos un cirujano experto en carga inmediata 2 días por semana..."></textarea>
+                                    <div className="space-y-2 mt-4">
+                                        <label className="text-[10px] font-bold tracking-widest uppercase font-heading text-gray-dark">Perfil a incorporar</label>
+                                        <textarea rows={4} className="w-full border border-perola-dark p-3 focus:outline-none focus:border-terracota transition-colors mt-1 bg-transparent text-dark-medium text-[15px]" placeholder="Ej: Buscamos un cirujano experto en carga inmediata 2 días por semana..."></textarea>
                                     </div>
-                                    <button type="button" className="w-full bg-dark text-white p-4 text-[13px] font-bold tracking-widest uppercase font-heading hover:bg-terracota transition-colors">
+                                    <button type="button" className="btn-fill w-full bg-dark text-white p-4 text-[13px] font-bold tracking-widest uppercase font-heading mt-2">
                                         Enviar solicitud
                                     </button>
                                     <p className="text-[10px] text-gray mt-4 text-center">
@@ -70,23 +90,24 @@ export default function ContactoPage() {
                                 <div className="h-[46px] w-[3px] bg-gray-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
                                 <div className="h-[64px] w-[3px] bg-gray-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
                                 <div className="relative rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-white z-10 flex flex-col justify-between">
-                                    {/* Top Notch Area spacing */}
                                     <div className="pt-10 px-6 pb-4">
                                         <h2 className="text-sm font-heading font-bold text-dark mb-4 mt-2">Solicita una auditoría</h2>
-                                        <form className="space-y-4">
-                                            <div className="space-y-1">
-                                                <label className="text-[9px] font-bold tracking-widest uppercase font-heading text-gray-dark">Nombre y Clínica</label>
-                                                <input type="text" className="w-full text-xs border-b border-perola-dark py-1 focus:outline-none focus:border-terracota transition-colors" placeholder="Tus datos" />
+                                        <form className="space-y-2">
+                                            <div className="wave-group">
+                                                <input required type="text" className="input text-xs" />
+                                                <span className="bar"></span>
+                                                <WaveLabel text="Nombre y Clínica" />
                                             </div>
-                                            <div className="space-y-1">
-                                                <label className="text-[9px] font-bold tracking-widest uppercase font-heading text-gray-dark">Email corporativo</label>
-                                                <input type="email" className="w-full text-xs border-b border-perola-dark py-1 focus:outline-none focus:border-terracota transition-colors" placeholder="email@clinica.com" />
+                                            <div className="wave-group">
+                                                <input required type="email" className="input text-xs" />
+                                                <span className="bar"></span>
+                                                <WaveLabel text="Email" />
                                             </div>
-                                            <div className="space-y-1">
+                                            <div className="space-y-1 mt-2">
                                                 <label className="text-[9px] font-bold tracking-widest uppercase font-heading text-gray-dark">Perfil</label>
-                                                <textarea rows={3} className="w-full text-xs border border-perola-dark p-2 focus:outline-none focus:border-terracota transition-colors mt-1 resize-none" placeholder="Detalles..."></textarea>
+                                                <textarea rows={3} className="w-full text-xs border border-perola-dark p-2 focus:outline-none focus:border-terracota transition-colors mt-1 resize-none bg-transparent"></textarea>
                                             </div>
-                                            <button type="button" className="w-full bg-dark text-white py-3 text-[10px] font-bold tracking-widest uppercase font-heading hover:bg-terracota transition-colors mt-2 rounded">
+                                            <button type="button" className="btn-fill w-full bg-dark text-white py-3 text-[10px] font-bold tracking-widest uppercase font-heading mt-2 rounded">
                                                 Enviar
                                             </button>
                                         </form>
