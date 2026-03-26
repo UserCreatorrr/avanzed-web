@@ -88,7 +88,7 @@ export default function ServicePageTemplate({ data }: { data: ServicePageProps }
 
             {/* 8. Por qué Avanzed */}
             <section className="py-24 bg-dark text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-bright-red opacity-10 blur-3xl rounded-full"></div>
+                <div className="absolute top-0 right-0 w-64 h-64 bg-terracota opacity-10 blur-3xl rounded-full"></div>
                 <div className="container mx-auto px-6 relative z-10 max-w-5xl">
                     <div className="text-center mb-16">
                         <span className="text-overline text-terracota mb-4 block">Diferencial</span>
@@ -99,7 +99,7 @@ export default function ServicePageTemplate({ data }: { data: ServicePageProps }
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {data.whyAvanzed.map((wa, i) => (
-                            <div key={i} className="bg-white/5 p-6 border-t-2 border-terracota hover:border-bright-red transition-colors">
+                            <div key={i} className="bg-white/5 p-6 border-t-2 border-terracota hover:border-terracota transition-colors">
                                 <h4 className="font-heading font-bold text-lg mb-3">{wa.title}</h4>
                                 <p className="text-body-small text-white/60">{wa.desc}</p>
                             </div>
@@ -162,7 +162,7 @@ export default function ServicePageTemplate({ data }: { data: ServicePageProps }
             {/* 12. Prueba social & 13. CTA final */}
             <section className="bg-dark py-24 text-white">
                 <div className="container mx-auto px-6 text-center max-w-3xl">
-                    <p className="text-quote text-bright-red mb-12">"Procesos seguros. Resultados fiables."</p>
+                    <p className="text-quote text-terracota mb-12">"Procesos seguros. Resultados fiables."</p>
                     <span className="text-overline text-terracota mb-6 block">Pasos siguientes</span>
                     <h2 className="text-h1 text-white mb-8">Asegura la calidad de tu próximo equipo</h2>
                     <Link href="/contacto" className="bg-terracota text-white px-10 py-5 text-[14px] font-bold tracking-widest uppercase font-heading hover:bg-terracota-dark transition-colors inline-block">
