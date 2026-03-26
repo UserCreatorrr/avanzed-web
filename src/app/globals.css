@@ -5,7 +5,7 @@
   --color-terracota: #315A70;
   --color-terracota-dark: #264757;
   --color-terracota-light: #B08A72;
-  
+
   --color-bright-red: #B08A72;
   --color-bright-red-dark: #9A7060;
 
@@ -56,30 +56,30 @@ body {
 @layer utilities {
   .text-h1 {
     font-family: var(--font-heading);
-    font-size: 2.75rem; /* 44px */
-    font-weight: 800; /* ExtraBold */
+    font-size: 2.75rem;
+    font-weight: 800;
     line-height: 1.05;
     letter-spacing: -0.02em;
   }
 
   .text-h2 {
     font-family: var(--font-heading);
-    font-size: 1.75rem; /* 28px */
-    font-weight: 600; /* SemiBold or Bold (700) */
+    font-size: 1.75rem;
+    font-weight: 600;
     line-height: 1.2;
     letter-spacing: -0.01em;
   }
 
   .text-h3 {
     font-family: var(--font-heading);
-    font-size: 1.25rem; /* 20px */
+    font-size: 1.25rem;
     font-weight: 700;
     line-height: 1.3;
   }
-  
+
   .text-overline {
     font-family: var(--font-heading);
-    font-size: 0.8125rem; /* 13px */
+    font-size: 0.8125rem;
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -87,13 +87,13 @@ body {
 
   .text-body {
     font-family: var(--font-sans);
-    font-size: 1.0625rem; /* 17px */
+    font-size: 1.0625rem;
     line-height: 1.8;
   }
-  
+
   .text-body-small {
     font-family: var(--font-sans);
-    font-size: 0.875rem; /* 14px */
+    font-size: 0.875rem;
     line-height: 1.6;
   }
 
@@ -104,4 +104,233 @@ body {
     font-weight: 400;
     line-height: 1.5;
   }
+}
+
+/* ============================================
+   UI EFFECTS — Buttons, Cards, Form Inputs
+   ============================================ */
+
+/* BTN-FILL: fill-from-bottom animation */
+.btn-fill {
+  position: relative;
+  transition: color 0.5s ease;
+  overflow: hidden;
+}
+.btn-fill::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--color-terracota-light);
+  transition: 0.5s ease;
+  z-index: 1;
+}
+.btn-fill:hover {
+  color: var(--color-dark) !important;
+  transition-delay: 0.5s;
+}
+.btn-fill:hover::before {
+  width: 100%;
+}
+.btn-fill::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: var(--color-terracota-light);
+  transition: 0.4s ease;
+  z-index: 0;
+}
+.btn-fill:hover::after {
+  height: 100%;
+  transition-delay: 0.4s;
+}
+
+/* NAV-LINK-ANIMATED: double underline expand from center */
+.nav-link-animated {
+  display: inline-block;
+}
+.nav-link-animated::before {
+  margin-left: auto;
+}
+.nav-link-animated::after,
+.nav-link-animated::before {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: var(--color-terracota-light);
+  display: block;
+  transition: 0.5s;
+}
+.nav-link-animated:hover::after,
+.nav-link-animated:hover::before {
+  width: 100%;
+}
+
+/* BTN2: border curtain reveal */
+.btn2 {
+  position: relative;
+  display: inline-block;
+  border: 2px solid currentColor;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  transition: 0.3s;
+  background-color: transparent;
+  cursor: pointer;
+  overflow: hidden;
+}
+.btn2::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 6px);
+  height: calc(100% + 2px);
+  background-color: var(--color-perola-light);
+  transition: 0.3s ease-out;
+  transform: scaleY(1);
+  z-index: 0;
+}
+.btn2::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% - 50px);
+  background-color: var(--color-perola-light);
+  transition: 0.3s ease-out;
+  transform: scaleY(1);
+  z-index: 0;
+}
+.btn2:hover::before {
+  transform: translateY(-25px);
+  height: 0;
+}
+.btn2:hover::after {
+  transform: scaleX(0);
+  transition-delay: 0.15s;
+}
+.btn2-text {
+  position: relative;
+  z-index: 3;
+}
+
+/* CARD-EXPAND: expanding circle fill reveal on hover */
+.card-expand {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+.card-expand::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -16px;
+  right: -16px;
+  background: var(--color-terracota);
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  transform: scale(1);
+  transform-origin: 50% 50%;
+  transition: transform 0.35s ease-out;
+}
+.card-expand:hover::before {
+  transform: scale(22);
+}
+.card-expand:hover .card-expand-text {
+  transition: all 0.3s ease-out;
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+.card-expand:hover .card-expand-title {
+  transition: all 0.3s ease-out;
+  color: #ffffff !important;
+}
+
+/* CARD-LIFT: subtle lift with shadow on hover */
+.card-lift {
+  top: 0;
+  position: relative;
+  transition: all 0.25s ease-out;
+}
+.card-lift:hover {
+  box-shadow: 0px 8px 24px rgba(17, 30, 39, 0.15);
+  top: -5px;
+  border-color: var(--color-terracota-light) !important;
+  background-color: white !important;
+}
+
+/* WAVE-GROUP: animated floating label form inputs */
+.wave-group {
+  position: relative;
+  padding-top: 24px;
+}
+.wave-group .input {
+  font-size: 15px;
+  padding: 8px 8px 8px 4px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--color-perola-dark);
+  background: transparent;
+  color: var(--color-dark-medium);
+  font-family: var(--font-sans);
+}
+.wave-group .input:focus {
+  outline: none;
+}
+.wave-group .label {
+  color: var(--color-gray);
+  font-size: 10px;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  position: absolute;
+  pointer-events: none;
+  left: 4px;
+  top: 32px;
+  display: flex;
+}
+.wave-group .label-char {
+  transition: 0.2s ease all;
+  transition-delay: calc(var(--index) * 0.04s);
+}
+.wave-group .input:focus ~ label .label-char,
+.wave-group .input:valid ~ label .label-char {
+  transform: translateY(-26px);
+  font-size: 9px;
+  color: var(--color-terracota);
+}
+.wave-group .bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.wave-group .bar::before,
+.wave-group .bar::after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: var(--color-terracota);
+  transition: 0.2s ease all;
+}
+.wave-group .bar::before {
+  left: 50%;
+}
+.wave-group .bar::after {
+  right: 50%;
+}
+.wave-group .input:focus ~ .bar::before,
+.wave-group .input:focus ~ .bar::after {
+  width: 50%;
 }
